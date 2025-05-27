@@ -1025,17 +1025,17 @@ p {
 .about {
   background-color: var(--section-bg);
 }
-
 .about-content {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: var(--spacing-2xl);
+  place-items: center;
+  grid-template-columns: 1fr;
+  text-align: center;
   margin-bottom: var(--spacing-xl);
 }
 
-.about-text p {
-  margin-bottom: var(--spacing-md);
-  font-size: 1.05rem;
+.about-text {
+  max-width: 800px;
+  width: 100%;
 }
 
 .stat-grid {
@@ -1200,6 +1200,16 @@ p {
 /*--------------------------------------------------------------
 # Projects Section
 --------------------------------------------------------------*/
+.project-link {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.project-card * {
+  pointer-events: auto;
+}
+
 .projects {
   background-color: var(--body-bg);
 }
