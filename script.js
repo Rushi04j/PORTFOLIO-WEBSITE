@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupAIChat();
   setupSectionAnimations();
   setupCardTilt();
+  setupCaseStudyModal(); // New Modal Init
 
   // Initialize AOS (Animate on Scroll)
   if (typeof AOS !== "undefined") {
@@ -546,10 +547,13 @@ function updateParticlesColor(isDarkTheme) {
 }
 
 function updateParticlesConfig(isDarkTheme) {
+  const isMobile = window.innerWidth < 768;
+  const particleCount = isMobile ? 30 : 80; // Reduce count for mobile
+
   const particlesConfig = {
     particles: {
       number: {
-        value: 80,
+        value: particleCount,
         density: {
           enable: true,
           value_area: 800,

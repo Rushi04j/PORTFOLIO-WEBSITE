@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rushikesh's Portfolio</title>
+<meta name="description" content="Portfolio of Rushikesh Joshi - Expert React.js & Frontend Developer specializing in high-performance web apps, AI/ML integration, and cloud security.">
+<meta name="keywords" content="Rushikesh Joshi, Frontend Developer, React.js, Web Developer, Portfolio, AI/ML, Cloud Security, Next.js">
+<meta name="author" content="Rushikesh Joshi">
+<meta property="og:title" content="Rushikesh Joshi | Frontend Developer & UI Engineer">
+<meta property="og:description" content="Building immersive, high-performance web applications with modern architecture. View my projects and experience.">
+<meta property="og:image" content="https://via.placeholder.com/1200x630/00f7ff/000000?text=Rushikesh+Joshi+Portfolio">
+<meta property="og:url" content="https://portfolio-website-8o5ahcpns-rushi831s-projects.vercel.app">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://via.placeholder.com/32/00f7ff/000000?text=R" type="image/png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link rel="stylesheet" href="styles.css">
@@ -99,6 +109,13 @@
     <h2 class="hero-subtitle">
       <span class="typing-text"></span><span class="typing-cursor">|</span>
     </h2>
+    <!-- Avatar Section -->
+    <div class="hero-avatar-container" data-aos="zoom-in" data-aos-delay="200">
+        <div class="hero-avatar">
+            <img src="https://via.placeholder.com/400x400/121212/00f7ff?text=Avatar" alt="Rushikesh Joshi" class="avatar-img">
+            <div class="avatar-circle"></div>
+        </div>
+    </div>
 <p class="hero-description">
 Frontend Developer | React.js Expert | Performance-Oriented UI Engineer<br>
 Designing and developing high-quality, responsive, and accessible web applications with a strong focus on scalability, usability, and modern frontend architecture.
@@ -335,9 +352,12 @@ I aim to deliver digital experiences that are visually refined, fast, and meanin
     <div class="project-card" data-category="fullstack" data-aos="fade-up">
       <div class="project-content">
         <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-gamepad"></i>
-          </div>
+           <div class="project-image-container">
+             <img src="https://via.placeholder.com/600x340/1a1a1a/00f7ff?text=Escape+Room+Game" alt="Escape Room Game" class="project-img">
+             <div class="project-overlay">
+                 <button class="btn-read-more" data-project="escape-room">Read Case Study</button>
+             </div>
+           </div>
           <h3 class="project-title">Escape Room Game</h3>
         </div>
         <p class="project-description">A MERN stack-based escape room game with authentication and dynamic challenges. Created secure RESTful APIs using Node.js & Express.js, managing game state with MongoDB.</p>
@@ -362,9 +382,12 @@ I aim to deliver digital experiences that are visually refined, fast, and meanin
     <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="100">
       <div class="project-content">
         <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-film"></i>
-          </div>
+           <div class="project-image-container">
+             <img src="https://via.placeholder.com/600x340/1a1a1a/e50914?text=Netflix+Clone" alt="Netflix Clone" class="project-img">
+             <div class="project-overlay">
+                 <button class="btn-read-more" data-project="netflix-clone">Read Case Study</button>
+             </div>
+           </div>
           <h3 class="project-title">Netflix Clone</h3>
         </div>
         <p class="project-description">Built a responsive Netflix UI using React.js with API integration for dynamic content. Implemented state management and optimized rendering, reducing load times by 35%.</p>
@@ -389,9 +412,12 @@ I aim to deliver digital experiences that are visually refined, fast, and meanin
     <div class="project-card" data-category="fullstack" data-aos="fade-up" data-aos-delay="200">
       <div class="project-content">
         <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
+           <div class="project-image-container">
+             <img src="https://via.placeholder.com/600x340/0a192f/00f7ff?text=CyberSuraksha" alt="CyberSuraksha" class="project-img">
+             <div class="project-overlay">
+                 <button class="btn-read-more" data-project="cybersuraksha">Read Case Study</button>
+             </div>
+           </div>
           <h3 class="project-title">CyberSuraksha</h3>
         </div>
         <p class="project-description">A multilingual AI-assisted cybercrime reporting and policing system. Features automated incident classification, digital first-aid, and a defense-grade government dashboard.</p>
@@ -512,7 +538,42 @@ I aim to deliver digital experiences that are visually refined, fast, and meanin
       </div>
     </div>
   </div>
+  </div>
   </section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section">
+<div class="container">
+  <div class="section-header">
+    <h2 class="section-title" data-aos="fade-up">What People Say</h2>
+    <div class="section-line" data-aos="fade-up" data-aos-delay="200"></div>
+  </div>
+  <div class="testimonials-grid">
+      <div class="testimonial-card" data-aos="fade-up">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text">Rushikesh consistently delivers high-quality code. His ability to solve complex frontend challenges while keeping the user experience seamless is impressive.</p>
+          <div class="testimonial-author">
+              <img src="https://via.placeholder.com/50/cccccc/000000?text=M" alt="Mentor">
+              <div>
+                  <h4>Senior Developer</h4>
+                  <span>Zidio Development</span>
+              </div>
+          </div>
+      </div>
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text">An exceptional intern who brings fresh ideas to the table. His work on the Cloud Security project demonstrated a deep understanding of both development and security principles.</p>
+          <div class="testimonial-author">
+              <img src="https://via.placeholder.com/50/cccccc/000000?text=P" alt="Professor">
+              <div>
+                  <h4>Project Guide</h4>
+                  <span>AICTE Internship</span>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</section>
 
 <!-- Educational section  -->
 <section id="education" class="education section">
@@ -938,6 +999,16 @@ I aim to deliver digital experiences that are visually refined, fast, and meanin
 </button>
 
 <!-- Scripts -->
+<!-- Case Study Modal -->
+<div class="modal-overlay" id="caseStudyModal">
+    <div class="modal-container">
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+        <div class="modal-content">
+            <!-- Content injected via JS -->
+        </div>
+    </div>
+</div>
+
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="script.js"></script>
