@@ -3161,3 +3161,25 @@ body.dark-theme::before {
     justify-content: flex-start;
   }
 }
+/* Text Clarity & Image Fit */
+.profile-img {
+  object-fit: cover !important;
+  object-position: center 20% !important; /* Focus on face/shoulders */
+  transform: none !important;
+}
+
+.hero-title, .hero-subtitle, .hero-description {
+  position: relative;
+  z-index: 20;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+/* Remove glitch clutter for cleaner look */
+.glitch-text::before, .glitch-text::after {
+  display: none !important;
+}
+
+.hero-name {
+  color: var(--color-primary);
+  text-shadow: 0 0 20px rgba(0, 247, 255, 0.4);
+}
