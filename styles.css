@@ -2678,3 +2678,34 @@ body.dark-theme::before {
     transform: rotate(360deg);
   }
 }
+/* Enhanced Project Links */
+.project-links {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.5rem 1rem;
+  background: rgba(0, 247, 255, 0.05);
+  border: 1px solid rgba(0, 247, 255, 0.2);
+  border-radius: var(--radius-full);
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.project-link:hover {
+  background: rgba(0, 247, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 247, 255, 0.15);
+}
+
+.project-link i {
+  font-size: 1.1rem;
+}

@@ -869,10 +869,18 @@ function setupFilterButtons() {
 /**
  * Contact Form
  */
+/**
+ * Contact Form with EmailJS
+ */
 function setupContactForm() {
   const contactForm = document.getElementById("contact-form");
+  const submitBtn = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+  const originalBtnContent = submitBtn ? submitBtn.innerHTML : '';
 
   if (!contactForm) return;
+
+  // Initialize EmailJS (Replace with your actual Public Key from EmailJS dashboard)
+  emailjs.init("YOUR_PUBLIC_KEY_HERE"); 
 
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -881,10 +889,10 @@ function setupContactForm() {
     const emailInput = document.getElementById("email");
     const subjectInput = document.getElementById("subject");
     const messageInput = document.getElementById("message");
-    const submitButton = contactForm.querySelector('button[type="submit"]');
 
     let isValid = true;
 
+    // Validation
     if (!nameInput.value.trim()) {
       showError(nameInput, "Please enter your name");
       isValid = false;
@@ -917,49 +925,68 @@ function setupContactForm() {
     }
 
     if (isValid) {
-      // Add loading animation to button
-      const originalText = submitButton.innerHTML;
-      submitButton.innerHTML = '<span>Sending</span><span class="typing-dots"><span></span><span></span><span></span></span>';
-      submitButton.disabled = true;
-      
-      // Simulate form sending with animated success
-      setTimeout(() => {
-        submitButton.innerHTML = '<span>Sent!</span> <i class="fas fa-check"></i>';
-        
-        // Add success notification
-        showToast(
-          "Message Sent!",
-          "Your message has been sent successfully. I will get back to you soon.",
-          "check-circle",
-          "success",
-        );
-        
-        // Reset form with smooth clearing animation
-        formInputs = contactForm.querySelectorAll('.form-input');
-        formInputs.forEach((input, index) => {
-          setTimeout(() => {
-            input.style.transition = "transform 0.3s ease, opacity 0.3s ease";
-            input.style.opacity = "0.5";
-            input.style.transform = "translateX(10px)";
-            
-            setTimeout(() => {
-              input.value = "";
-              input.style.opacity = "1";
-              input.style.transform = "translateX(0)";
-            }, 300);
-          }, index * 100);
-        });
+      // Show loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Sending</span><span class="typing-dots"><span></span><span></span><span></span></span>';
+      }
 
-        // Reset button after animation
-        setTimeout(() => {
-          submitButton.innerHTML = originalText;
-          submitButton.disabled = false;
-        }, 2000);
-      }, 1500);
+      // Prepare parameters for EmailJS
+      const templateParams = {
+        from_name: nameInput.value,
+        from_email: emailInput.value,
+        subject: subjectInput.value,
+        message: messageInput.value,
+        to_name: "Rushikesh" 
+      };
+
+      // Send email
+      // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with actual values
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+        .then(() => {
+          if (submitBtn) {
+            submitBtn.innerHTML = '<span>Sent!</span> <i class="fas fa-check"></i>';
+          }
+          
+          showToast("Message Sent!", "Thanks for reaching out. I'll get back to you soon.", "check-circle", "success");
+          
+          // Reset form with animation
+          const formInputs = contactForm.querySelectorAll('.form-input');
+          formInputs.forEach((input, index) => {
+            setTimeout(() => {
+              input.style.transition = "transform 0.3s ease, opacity 0.3s ease";
+              input.style.opacity = "0.5";
+              input.style.transform = "translateX(10px)";
+              
+              setTimeout(() => {
+                input.value = "";
+                input.style.opacity = "1";
+                input.style.transform = "translateX(0)";
+              }, 300);
+            }, index * 100);
+          });
+
+          // Reset button
+          setTimeout(() => {
+            if (submitBtn) {
+              submitBtn.innerHTML = originalBtnContent;
+              submitBtn.disabled = false;
+            }
+          }, 2000);
+        })
+        .catch((error) => {
+          console.error("EmailJS Error:", error);
+          showToast("Sending Failed", "Something went wrong. Please check your internet connection or try again later.", "times-circle", "error");
+          
+          if (submitBtn) {
+            submitBtn.innerHTML = originalBtnContent;
+            submitBtn.disabled = false;
+          }
+        });
     }
   });
 
-  // Add focus animations to form inputs
+  // Add focus animations
   const formInputs = contactForm.querySelectorAll('.form-input');
   formInputs.forEach(input => {
     input.addEventListener('focus', () => {
