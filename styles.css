@@ -2942,3 +2942,45 @@ body.dark-theme::before {
 .project-card:hover .project-thumb-placeholder {
   transform: scale(1.05);
 }
+
+/* Enhanced Hero Layout */
+.hero-content {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: var(--spacing-xl);
+  text-align: center;
+}
+
+.hero-right {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    text-align: left;
+    gap: var(--spacing-2xl);
+  }
+  .hero-right {
+    justify-content: center;
+    display: flex;
+  }
+  .hero-avatar-container {
+    display: flex !important;
+    margin-bottom: 0;
+    grid-column: auto;
+    grid-row: auto;
+    transform: none;
+  }
+  .social-links {
+    justify-content: flex-start;
+  }
+  .hero-cta {
+    justify-content: flex-start;
+  }
+}
