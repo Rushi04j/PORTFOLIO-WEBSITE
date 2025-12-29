@@ -1299,3 +1299,67 @@ function setupAIChat() {
     }
   }
 }
+/* Case Study Data */
+const caseStudies = {
+  'escape-room': {
+    title: 'Escape Room Game',
+    image: 'https://via.placeholder.com/800x400/1a1a1a/00f7ff?text=Escape+Room+Banner',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB'],
+    content: '<p><strong>The Challenge:</strong> Create an engaging, interactive web-based game that tests coding knowledge while providing a fun user experience.</p><p><strong>The Solution:</strong> I architected a MERN stack application with a custom state management engine to handle game logic, inventory systems, and puzzle validation in real-time.</p><h3>Key Features</h3><ul><li> secure JWT Authentication</li><li>Real-time progress saving</li><li>Admin dashboard for puzzle management</li></ul>'
+  },
+  'netflix-clone': {
+    title: 'Netflix Clone',
+    image: 'https://via.placeholder.com/800x400/1a1a1a/e50914?text=Netflix+Clone+Banner',
+    tech: ['React', 'TMDB API', 'Firebase'],
+    content: '<p><strong>The Challenge:</strong> Replicating the smooth, high-performance UI of a major streaming platform.</p><p><strong>The Solution:</strong> leveraged React functional components and hooks for efficient state management. Implemented lazy loading for images and video previews to ensure 60fps scrolling performance.</p>'
+  },
+  'cybersuraksha': {
+    title: 'CyberSuraksha',
+    image: 'https://via.placeholder.com/800x400/0a192f/00f7ff?text=CyberSuraksha+Banner',
+    tech: ['Next.js', 'TensorFlow.js', 'Node.js'],
+    content: '<p><strong>The Challenge:</strong> Bridge the gap between citizens and law enforcement for cybercrime reporting in a multilingual country.</p><p><strong>The Solution:</strong> A comprehensive platform featuring an AI chatbot for instant guidance, automatic crime categorization using NLP, and a specialized dashboard for police officers.</p>'
+  }
+};
+
+function setupCaseStudyModal() {
+  const modal = document.getElementById('caseStudyModal');
+  if (!modal) return;
+  
+  const modalContent = modal.querySelector('.modal-content');
+  const closeBtn = modal.querySelector('.modal-close');
+  const buttons = document.querySelectorAll('.btn-read-more');
+
+  if (!modalContent || !closeBtn) return;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const projectId = btn.getAttribute('data-project');
+      const data = caseStudies[projectId];
+      
+      if (data) {
+        const techHtml = data.tech.map(t => `<span class="project-tech-item">${t}</span>`).join('');
+        modalContent.innerHTML = `
+          <img src="${data.image}" style="width:100%; border-radius:8px; margin-bottom:20px;">
+          <h2>${data.title}</h2>
+          <div class="project-tech" style="margin-bottom:20px;">${techHtml}</div>
+          <div class="modal-body">${data.content}</div>
+        `;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
