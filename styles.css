@@ -2902,6 +2902,43 @@ body.dark-theme::before {
   cursor: pointer;
 }
 
-.modal-close:hover {
-  color: var(--color-error);
+/* Fallback Avatar & Project Thumbs (No External Images) */
+.hero-avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--card-bg), var(--body-bg));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: var(--color-primary);
+}
+
+.project-thumb-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transition: transform 0.5s ease;
+}
+
+.thumb-escape {
+  background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+  color: #00f7ff;
+}
+
+.thumb-netflix {
+  background: linear-gradient(45deg, #000000, #4a0000);
+  color: #e50914;
+}
+
+.thumb-cyber {
+  background: linear-gradient(45deg, #0a192f, #112240);
+  color: #00f7ff;
+}
+
+.project-card:hover .project-thumb-placeholder {
+  transform: scale(1.05);
 }
