@@ -657,7 +657,7 @@ function setupTypingEffect() {
 
   if (!typingElement || !cursorElement) return;
 
-  const textList = ["Web Developer", "Software Engineer", "UI/UX Designer", "Problem Solver", "AI/ML Enthusiast"];
+  const textList = ["Software Engineer", "React Frontend Developer", "UI Performance Engineer"];
 
   let textIndex = 0;
   let charIndex = 0;
