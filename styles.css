@@ -3762,3 +3762,7 @@ body.dark-theme::before {
   .contact-bar-content { justify-content: space-evenly; }
   .contact-resume-btn { font-size: 0.8rem; padding: 6px 10px; }
 }
+
+/* Fix AI Button Overlap */
+.chat-toggle-btn { bottom: 100px; }
+@media (max-width: 576px) { .ai-chat-widget { bottom: 160px; } }
