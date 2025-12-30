@@ -363,6 +363,36 @@ I aim to deliver digital experiences that are visually refined, fast, and meanin
       </div>
     </div>
   </div>
+
+  <!-- Github Activity & Performance Flex -->
+  <div class="skills-proof-section" data-aos="fade-up">
+    <div class="github-activity">
+      <h3 class="proof-title"><i class="fab fa-github"></i> GitHub Coding Streak</h3>
+      <div class="github-graph-placeholder">
+        <!-- Simulated graph visualization -->
+        <div class="graph-bar" style="height: 40%"></div><div class="graph-bar" style="height: 70%"></div><div class="graph-bar" style="height: 50%"></div><div class="graph-bar" style="height: 90%"></div>
+        <div class="graph-bar" style="height: 30%"></div><div class="graph-bar" style="height: 60%"></div><div class="graph-bar" style="height: 80%"></div><div class="graph-bar" style="height: 45%"></div>
+        <div class="graph-bar" style="height: 95%"></div><div class="graph-bar" style="height: 20%"></div><div class="graph-bar" style="height: 75%"></div><div class="graph-bar" style="height: 60%"></div>
+        <div class="graph-bar" style="height: 85%"></div><div class="graph-bar" style="height: 55%"></div><div class="graph-bar" style="height: 40%"></div><div class="graph-bar" style="height: 90%"></div>
+        <div class="graph-bar" style="height: 70%"></div><div class="graph-bar" style="height: 30%"></div><div class="graph-bar" style="height: 50%"></div><div class="graph-bar" style="height: 80%"></div>
+      </div>
+      <p class="proof-subtitle">1,200+ Contributions in the last year</p>
+    </div>
+
+    <div class="performance-badge">
+       <h3 class="proof-title"><i class="fas fa-bolt"></i> Site Performance</h3>
+       <div class="lighthouse-score">
+         <div class="score-circle">
+           <svg viewBox="0 0 36 36" class="circular-chart green">
+             <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+             <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+           </svg>
+           <div class="percentage">100</div>
+         </div>
+         <span class="score-label">Lighthouse Score</span>
+       </div>
+    </div>
+  </div>
 </div>
 </section>
 
@@ -386,6 +416,9 @@ I aim to deliver digital experiences that are visually refined, fast, and meanin
         <div class="project-header">
            <div class="project-image-container">
              <div class="live-status-badge"><span class="status-dot"></span> Live</div>
+             <div class="project-preview-video">
+                <div class="video-placeholder"></div>
+             </div>
              <div class="project-thumb-placeholder thumb-escape">
                <i class="fas fa-gamepad"></i>
              </div>
@@ -419,6 +452,9 @@ I aim to deliver digital experiences that are visually refined, fast, and meanin
         <div class="project-header">
            <div class="project-image-container">
              <div class="live-status-badge"><span class="status-dot"></span> Live</div>
+             <div class="project-preview-video">
+                <div class="video-placeholder"></div>
+             </div>
              <div class="project-thumb-placeholder thumb-netflix">
                <i class="fas fa-play-circle"></i>
              </div>
@@ -452,6 +488,9 @@ I aim to deliver digital experiences that are visually refined, fast, and meanin
         <div class="project-header">
            <div class="project-image-container">
              <div class="live-status-badge"><span class="status-dot"></span> Live</div>
+             <div class="project-preview-video">
+                <div class="video-placeholder"></div>
+             </div>
              <div class="project-thumb-placeholder thumb-cyber">
                <i class="fas fa-shield-alt"></i>
              </div>
@@ -1022,5 +1061,53 @@ I aim to deliver digital experiences that are visually refined, fast, and meanin
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="script.js"></script>
+<!-- Quick Contact Bar -->
+<div class="quick-contact-bar">
+  <div class="container contact-bar-content">
+    <div class="contact-info-group">
+      <button class="contact-action-btn" onclick="copyToClipboard('rj751054@gmail.com', 'Email copied!')">
+        <i class="fas fa-envelope"></i> <span class="action-text">Copy Email</span>
+      </button>
+      <button class="contact-action-btn" onclick="copyToClipboard('8087232830', 'Phone copied!')">
+        <i class="fas fa-phone"></i> <span class="action-text">Copy Phone</span>
+      </button>
+    </div>
+    <a href="assets/Rushikesh_Joshi_Resume.pdf" download class="contact-resume-btn">
+      <i class="fas fa-download"></i> Download Resume
+    </a>
+  </div>
+</div>
+
+<!-- Toast Notification Container (Reuse existing or ensure it's there) -->
+<!-- Script for Copy Functionality -->
+<script>
+  function copyToClipboard(text, successMessage) {
+    navigator.clipboard.writeText(text).then(() => {
+      // Create and show toast
+      showToast(successMessage, 'success'); 
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+      showToast('Failed to copy', 'error');
+    });
+  }
+
+  // Simple Toast Function if not already in main script
+  function showToast(message, type = 'info') {
+    const container = document.querySelector('.toast-container') || createToastContainer();
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `<div class="toast-content"><p class="toast-message">${message}</p></div>`;
+    container.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  }
+
+  function createToastContainer() {
+    const container = document.createElement('div');
+    container.className = 'toast-container';
+    document.body.appendChild(container);
+    return container;
+  }
+</script>
+
 </body>
 </html>
