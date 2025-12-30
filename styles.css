@@ -3508,3 +3508,14 @@ body.dark-theme::before {
   70% { opacity: 1; box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
   100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
+
+/* Name & Avatar Enhancements */
+.hero-name {
+  white-space: nowrap;
+}
+
+.hero-avatar-img {
+  object-position: center top !important; /* Forces top of image to show */
+  object-fit: cover !important;
+  transform: scale(1.05); /* Slight zoom to better fit face */
+}
