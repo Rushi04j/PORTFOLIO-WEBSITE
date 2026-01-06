@@ -593,10 +593,11 @@ p {
 
 .logo {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--heading-color);
   transition: color var(--transition-normal);
+  white-space: nowrap;
 }
 
 .logo:hover {
@@ -605,7 +606,8 @@ p {
 
 .nav-list {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-sm);
+  align-items: center;
 }
 
 .nav-link {
@@ -613,6 +615,8 @@ p {
   font-weight: 500;
   position: relative;
   padding: var(--spacing-xs) 0;
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 .nav-link:hover,
@@ -3402,6 +3406,7 @@ body.dark-theme::before {
     height: 380px;
   }
 }
+
 /* Tech Stack Marquee */
 .tech-marquee-section {
   padding: 3rem 0;
@@ -3423,7 +3428,8 @@ body.dark-theme::before {
   display: flex;
   gap: 5rem;
   animation: scroll-marquee 25s linear infinite;
-  padding-left: 5rem; /* Initial offset */
+  padding-left: 5rem;
+  /* Initial offset */
 }
 
 .tech-logo-item {
@@ -3453,8 +3459,13 @@ body.dark-theme::before {
 }
 
 @keyframes scroll-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 
@@ -3504,9 +3515,20 @@ body.dark-theme::before {
 }
 
 @keyframes pulse-green {
-  0% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-  70% { opacity: 1; box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
-  100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+
+  70% {
+    opacity: 1;
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
 }
 
 /* Name & Avatar Enhancements */
@@ -3515,9 +3537,11 @@ body.dark-theme::before {
 }
 
 .hero-avatar-img {
-  object-position: center top !important; /* Forces top of image to show */
+  object-position: center top !important;
+  /* Forces top of image to show */
   object-fit: cover !important;
-  transform: scale(1.05); /* Slight zoom to better fit face */
+  transform: scale(1.05);
+  /* Slight zoom to better fit face */
 }
 
 /* Interactive Project Video Previews */
@@ -3567,9 +3591,20 @@ body.dark-theme::before {
 }
 
 @keyframes pulse-border {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* GitHub Activity & Performance Proof */
@@ -3581,7 +3616,8 @@ body.dark-theme::before {
   justify-content: center;
 }
 
-.github-activity, .performance-badge {
+.github-activity,
+.performance-badge {
   flex: 1;
   min-width: 300px;
   background: var(--card-bg);
@@ -3683,11 +3719,15 @@ body.dark-theme::before {
 }
 
 @keyframes grow-bar {
-  from { height: 0; }
+  from {
+    height: 0;
+  }
 }
 
 @keyframes progress {
-  0% { stroke-dasharray: 0 100; }
+  0% {
+    stroke-dasharray: 0 100;
+  }
 }
 
 /* Sticky Quick Contact Bar */
@@ -3754,15 +3794,33 @@ body.dark-theme::before {
 }
 
 @keyframes slide-up-bar {
-  to { transform: translateY(0); }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
-  .action-text { display: none; }
-  .contact-bar-content { justify-content: space-evenly; }
-  .contact-resume-btn { font-size: 0.8rem; padding: 6px 10px; }
+  .action-text {
+    display: none;
+  }
+
+  .contact-bar-content {
+    justify-content: space-evenly;
+  }
+
+  .contact-resume-btn {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
 }
 
 /* Fix AI Button Overlap */
-.chat-toggle-btn { bottom: 100px; }
-@media (max-width: 576px) { .ai-chat-widget { bottom: 160px; } }
+.chat-toggle-btn {
+  bottom: 100px;
+}
+
+@media (max-width: 576px) {
+  .ai-chat-widget {
+    bottom: 160px;
+  }
+}
