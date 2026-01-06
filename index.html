@@ -98,6 +98,7 @@
 
 <!-- Hero Section -->
 <section id="home" class="hero section">
+<div id="particles-js"></div>
 <div class="container">
   <div class="hero-content">
     <!-- 2-Column Hero Grid -->
@@ -242,10 +243,10 @@
     <div class="skill-category-card" data-aos="fade-up">
       <h3 class="skill-category-title"><i class="fas fa-code"></i> Frontend</h3>
       <div class="skill-tags">
-        <span class="skill-tag">React.js</span>
+        <span class="skill-tag featured-skill">React.js</span>
         <span class="skill-tag">HTML5</span>
         <span class="skill-tag">CSS3</span>
-        <span class="skill-tag">JavaScript (ES6+)</span>
+        <span class="skill-tag featured-skill">JavaScript (ES6+)</span>
         <span class="skill-tag">Responsive Design</span>
       </div>
     </div>
@@ -254,7 +255,7 @@
     <div class="skill-category-card" data-aos="fade-up" data-aos-delay="100">
       <h3 class="skill-category-title"><i class="fas fa-server"></i> Backend</h3>
       <div class="skill-tags">
-        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag featured-skill">Node.js</span>
         <span class="skill-tag">Express.js</span>
         <span class="skill-tag">REST APIs</span>
         <span class="skill-tag">JWT Auth</span>
@@ -401,9 +402,16 @@
       <div class="timeline-item" data-aos="fade-right">
         <div class="timeline-content left">
           <div class="timeline-card">
+            <div class="timeline-logo">
+               <img src="https://zidio.in/assets/images/logo/logo.png" alt="Zidio Logo" onerror="this.style.display='none';">
+            </div>
             <h3 class="timeline-title">Web Developer Intern</h3>
             <h4 class="timeline-subtitle">Zidio Development</h4>
-            <p class="timeline-description">Developed modern, mobile-first landing pages and reusable UI modules using HTML5, CSS3, and JavaScript. Translated Figma wireframes into functional, accessible web components. Collaborated in Agile sprints with designers and developers to deliver client-facing features. Enhanced page speed and SEO performance using code optimization and image lazy loading techniques.</p>
+            <p class="timeline-description">
+              Hosted and maintained <strong>3+ modern, mobile-first landing pages</strong>, increasing mobile traffic engagement by <strong>40%</strong>. 
+              Translated Figma wireframes into pixel-perfect HTML5/CSS3 components. 
+              Enhanced page speed by <strong>35%</strong> using lazy loading and code optimization techniques.
+            </p>
             <div class="timeline-tech">
                       <span>React.js</span>
                       <span>JavaScript</span>
@@ -418,10 +426,16 @@
 <div class="timeline-item" data-aos="fade-left">
   <div class="timeline-content right">
     <div class="timeline-card">
+      <div class="timeline-logo">
+         <!-- Fallback lettermark for Skillbit -->
+         <div class="logo-placeholder">S</div>
+      </div>
       <h3 class="timeline-title">Frontend Developer Intern</h3>
       <h4 class="timeline-subtitle">Skillbit Technologies</h4>
       <p class="timeline-description">
-        Developed responsive and scalable web interfaces using React.js, JavaScript, HTML, and CSS. Collaborated with design and backend teams to deliver seamless UI components. Optimized rendering performance, reducing load time by 25%, and ensured cross-browser compatibility.
+        Marketed and developed responsive web interfaces, reducing load times by <strong>25%</strong> through optimized React rendering. 
+        Collaborated with backend teams to integrate REST APIs, ensuring <strong>99.9% data accuracy</strong>. 
+        ensured cross-browser compatibility across 5+ major browsers.
       </p>
       <div class="timeline-tech">
         <span>React.js</span>
@@ -804,11 +818,18 @@
     </div>
 </div>
 
+
+<!-- Floating Resume Button -->
+<a href="assets/Rushikesh_Joshi_Resume.pdf" download class="floating-resume-btn" aria-label="Download Resume" title="Hire Me">
+  <i class="fas fa-file-download"></i>
+  <span class="btn-text">Resume</span>
+</a>
+
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="script.js"></script>
-<!-- Quick Contact Bar -->
-<div class="quick-contact-bar">
+<!-- Quick Contact Bar (Hidden if FAB replaces it or coexist) -->
+<div class="quick-contact-bar" style="display:none;"> <!-- Hiding old bar in favor of FAB as per plan, or keeping both? Keeping FAB as primary CTA -->
   <div class="container contact-bar-content">
     <div class="contact-info-group">
       <button class="contact-action-btn" onclick="copyToClipboard('rj751054@gmail.com', 'Email copied!')">

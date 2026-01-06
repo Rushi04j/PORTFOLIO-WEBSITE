@@ -4005,3 +4005,131 @@ body.dark-theme .skill-category-card {
   width: 100%;
 }
 
+
+/* 
+=========================================================
+   RECRUITER-FRIENDLY ENHANCEMENTS
+=========================================================
+*/
+
+/* 1. Featured Skills */
+.skill-tag.featured-skill {
+  background: linear-gradient(45deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05)); /* Gold tint */
+  border: 1px solid rgba(255, 215, 0, 0.6);
+  color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+  font-weight: 600;
+}
+
+.skill-tag.featured-skill:hover {
+  background: #ffd700;
+  color: #000;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  transform: scale(1.1);
+}
+
+/* 2. Timeline Logos */
+.timeline-logo {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.timeline-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.logo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary);
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.timeline-card {
+  position: relative; /* Context for absolute logo */
+}
+
+/* 3. Floating Resume Button */
+.floating-resume-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+  color: #121212;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  box-shadow: 0 5px 20px rgba(0, 247, 255, 0.4);
+  z-index: 9999;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  text-decoration: none;
+}
+
+.floating-resume-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 247, 255, 0.6);
+  color: #000;
+}
+
+.floating-resume-btn i {
+  font-size: 1.2rem;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .floating-resume-btn {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+  .btn-text {
+    display: none; /* Icon only on mobile if tight, but usually text fits */
+    display: inline;
+  }
+}
+
+
+/* Particles Background */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Behind content which should be higher */
+  /* pointer-events: none; Ensure clicks pass through if needed, but particles might be interactive */
+}
+
+/* Ensure Hero Content is above particles */
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
