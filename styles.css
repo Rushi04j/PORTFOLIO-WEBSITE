@@ -3930,3 +3930,78 @@ body.dark-theme::before {
   opacity: 0.8;
 }
 
+
+/* 
+=========================================================
+   SKILL CARDS (Recruiter-Friendly Style)
+=========================================================
+*/
+.skill-category-card {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color, rgba(255,255,255,0.05));
+  height: 100%;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 247, 255, 0.15);
+  border-color: var(--color-primary);
+}
+
+.skill-category-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1));
+  padding-bottom: 0.75rem;
+}
+
+.skill-category-title i {
+  color: var(--color-primary);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-tag {
+  background: rgba(0, 247, 255, 0.08); /* Subtle cyan tint */
+  color: var(--text-primary);
+  padding: 0.4rem 0.85rem;
+  border-radius: 50px; /* Pill shape */
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(0, 247, 255, 0.2);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.skill-tag:hover {
+  background: var(--color-primary);
+  color: #000; /* Contrast text on hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--color-primary);
+  border-color: transparent;
+}
+
+body.dark-theme .skill-category-card {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Ensure container grid style works if not inline */
+.skills-grid {
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+}
+
