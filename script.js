@@ -657,7 +657,7 @@ function setupTypingEffect() {
 
   if (!typingElement || !cursorElement) return;
 
-  const textList = ["Software Engineer", "React Frontend Developer", "UI Performance Engineer"];
+  const textList = ["Full Stack Developer", "React Specialist", "Backend Engineer", "UI Performance Engineer"];
 
   let textIndex = 0;
   let charIndex = 0;
@@ -1304,20 +1304,20 @@ const caseStudies = {
   'escape-room': {
     title: 'Escape Room Game',
     image: 'https://via.placeholder.com/800x400/1a1a1a/00f7ff?text=Escape+Room+Banner',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB'],
-    content: '<p><strong>The Challenge:</strong> Create an engaging, interactive web-based game that tests coding knowledge while providing a fun user experience.</p><p><strong>The Solution:</strong> I architected a MERN stack application with a custom state management engine to handle game logic, inventory systems, and puzzle validation in real-time.</p><h3>Key Features</h3><ul><li> secure JWT Authentication</li><li>Real-time progress saving</li><li>Admin dashboard for puzzle management</li></ul>'
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+    content: '<p><strong>The Challenge:</strong> Design a gamified learning platform to test programming logic under time pressure, requiring high-performance state management.</p><p><strong>The Solution:</strong> Built a MERN stack application featuring a custom game engine that handles <strong>real-time puzzle validation</strong> and inventory systems. Implemented <strong>JWT-based secure authentication</strong> for user sessions and a leaderboard system.</p><h3>Key Achievements</h3><ul><li><i class="fas fa-check-circle" style="color:var(--color-primary)"></i> Engineered a lag-free game loop with React Hooks, ensuring <strong>60fps performance</strong>.</li><li><i class="fas fa-check-circle" style="color:var(--color-primary)"></i> Reduced backend latency by <strong>40%</strong> through optimized MongoDB indexing.</li><li><i class="fas fa-check-circle" style="color:var(--color-primary)"></i> Scaled to handle concurrent user sessions with secure state persistence.</li></ul>'
   },
   'netflix-clone': {
     title: 'Netflix Clone',
     image: 'https://via.placeholder.com/800x400/1a1a1a/e50914?text=Netflix+Clone+Banner',
     tech: ['React', 'TMDB API', 'Firebase'],
-    content: '<p><strong>The Challenge:</strong> Replicating the smooth, high-performance UI of a major streaming platform.</p><p><strong>The Solution:</strong> leveraged React functional components and hooks for efficient state management. Implemented lazy loading for images and video previews to ensure 60fps scrolling performance.</p>'
+    content: '<p><strong>The Challenge:</strong> Replicate the pixel-perfect UI and smooth streaming experience of Netflix.</p><p><strong>The Solution:</strong> Leveraged <strong>React Functional Components</strong> and <strong>Custom Hooks</strong> for efficient state management. Implemented lazy loading for images which improved page load time by <strong>35%</strong>.</p>'
   },
   'cybersuraksha': {
     title: 'CyberSuraksha',
     image: 'https://via.placeholder.com/800x400/0a192f/00f7ff?text=CyberSuraksha+Banner',
-    tech: ['Next.js', 'TensorFlow.js', 'Node.js'],
-    content: '<p><strong>The Challenge:</strong> Bridge the gap between citizens and law enforcement for cybercrime reporting in a multilingual country.</p><p><strong>The Solution:</strong> A comprehensive platform featuring an AI chatbot for instant guidance, automatic crime categorization using NLP, and a specialized dashboard for police officers.</p>'
+    tech: ['React.js', 'Node.js', 'Express.js', 'PostgreSQL'],
+    content: '<p><strong>The Challenge:</strong> Bridge the gap between non-technical citizens and law enforcement for reporting cybercrimes effectively.</p><p><strong>The Solution:</strong> Developed a comprehensive <strong>Full-Stack Reporting Portal</strong> with role-based access control (RBAC). Integrated an <strong>AI-powered Chatbot</strong> to guide users, reducing report filing time by <strong>50%</strong>.</p><h3>Key Achievements</h3><ul><li><i class="fas fa-check-circle" style="color:var(--color-primary)"></i> Designed a <strong>PostgreSQL schema</strong> handling complex relationships between victims, reports, and police stations.</li><li><i class="fas fa-check-circle" style="color:var(--color-primary)"></i> Implemented RESTful APIs for secure data transmission and real-time status updates.</li><li><i class="fas fa-check-circle" style="color:var(--color-primary)"></i> Enhanced accessibility with responsive design and multi-language support architecture.</li></ul>'
   }
 };
 
